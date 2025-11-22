@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Sree Ramchandra Murthy Peela | Computational Biologist</title>
+    
+    <!-- Google Fonts: Merriweather (Serif for headings) and Lato (Sans for body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@300;700;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #2c3e50; /* Dark Slate Blue */
+            --accent: #3498db; /* Academic Blue */
+            --bg-sidebar: #1a252f;
+            --text-sidebar: #ecf0f1;
+            --bg-main: #ffffff;
+            --text-main: #333333;
+            --light-gray: #f8f9fa;
+            --border: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-main);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* --- SIDEBAR (Left Profile) --- */
+        .sidebar {
+            width: 300px;
+            background-color: var(--bg-sidebar);
+            color: var(--text-sidebar);
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            padding: 40px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-right: 1px solid #000;
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent);
+            margin-bottom: 20px;
+            background-color: #fff; /* Placeholder bg */
+        }
+
+        .sidebar h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .sidebar .designation {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            font-size: 0.85rem;
+            text-align: left;
+            width: 100%;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-info i {
+            color: var(--accent);
+            width: 20px;
+        }
+
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: var(--text-sidebar);
+            font-size: 1.5rem;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        .cv-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .cv-btn:hover {
+            background: #2980b9;
+        }
+
+        /* --- MAIN CONTENT (Right Side) --- */
+        .main-content {
+            margin-left: 300px; /* Width of sidebar */
+            padding: 60px 80px;
+            flex: 1;
+            max-width: 1000px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+            margin-bottom: 30px;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* --- Timeline / Cards Style --- */
+        .card {
+            background: var(--light-gray);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .card-date {
+            font-style: italic;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .card-subtitle {
+            font-family: 'Merriweather', serif;
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        ul.card-list {
+            list-style-position: inside;
+            margin-left: 10px;
+        }
+
+        ul.card-list li {
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+
+        /* --- Publications List --- */
+        .pub-list {
+            list-style: none;
+        }
+
+        .pub-item {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border-left: 2px solid #ddd;
+        }
+
+        .pub-title {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .pub-journal {
+            font-style: italic;
+            color: #555;
+        }
+
+        .highlight-name {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: #e1e8ed;
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 900px) {
+            body {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                padding: 30px;
+                border-right: none;
+                border-bottom: 5px solid var(--accent);
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <!-- Replace 'profile.jpg' with your actual file name -->
+        <!-- <img src="profile.jpg" alt="Dr. Sreeram Peela" class="profile-img">  -->
+        
+        <h1>Dr. Sree Ramchandra Murthy Peela</h1>
+        <div class="designation">
+            Postdoctoral Research Associate<br>
+            Computational Biology, IIIT-Delhi
+        </div>
+
+        <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> New Delhi, India</p>
+            <p><i class="fas fa-envelope"></i> srirambds.murthy@gmail.com</p>
+            <p><i class="fas fa-phone"></i> +91-9159541851</p>
+            <p><i class="fas fa-clock"></i> Postdoc Exp: 5+ Years</p>
+        </div>
+
+        <div class="social-links">
+            <a href="https://github.com/sreerampeela" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://orcid.org/0000-0003-3379-6263" target="_blank" title="ORCID"><i class="fab fa-orcid"></i></a>
+            <a href="mailto:srirambds.murthy@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <!-- Add your CV file to the repo and name it 'cv.pdf' -->
+        <a href="#" class="cv-btn"><i class="fas fa-download"></i> Download Full CV</a>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- INTRO -->
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <p>
+                I am a Computational Biologist with over <strong>5 years of postdoctoral experience</strong>, bridging the gap between clinical microbiology and high-performance genomics. Currently working at <strong>IIIT-Delhi</strong>, I specialize in integrative cancer omics, pathogen surveillance, and building scalable machine learning workflows. My unique background (BDS → Ph.D. Microbiology → Computational Postdoc) allows me to understand biological data from the bench to the server.
+            </p>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills">
+            <h2 class="section-title">Technical Skills</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div>
+                    <h3><i class="fas fa-laptop-code"></i> Computational</h3>
+                    <div class="tag-container">
+                        <span class="skill-tag">Python & R</span>
+                        <span class="skill-tag">Nextflow</span>
+                        <span class="skill-tag">Docker/Singularity</span>
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">HPC/SLURM</span>
+                        <span class="skill-tag">Variant Calling</span>
+                        <span class="skill-tag">scRNA-seq</span>
+                    </div>
+                </div>
+                <div>
+                    <h3><i class="fas fa-vial"></i> Experimental</h3>
+                    <div class="tag-container">
+                        <span class="skill-tag">NGS Library Prep</span>
+                        <span class="skill-tag">PCR/qPCR/qLAMP</span>
+                        <span class="skill-tag">Bacterial Culture</span>
+                        <span class="skill-tag">AST</span>
+                        <span class="skill-tag">Sanger Sequencing</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience">
+            <h2 class="section-title">Research Experience</h2>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Research Associate</span>
+                    <span class="card-date">Apr 2024 – Present</span>
+                </div>
+                <div class="card-subtitle">IIIT-Delhi, Dept. of Computational Biology | PI: Dr. Debarka Sengupta</div>
+                <ul class="card-list">
+                    <li>Project: Recurrence-independent inference of rare and non-coding functional mutations in cancer.</li>
+                    <li>Designed Deep Learning frameworks for integrative cancer omics analysis.</li>
+                    <li>Performed single-cell transcriptomic analysis (scRNA-seq) for cell type classification.</li>
+                    <li>Mentored junior researchers in reproducible Nextflow pipelines.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Research Associate (ICMR)</span>
+                    <span class="card-date">Apr 2021 – Mar 2024</span>
+                </div>
+                <div class="card-subtitle">JIPMER, Puducherry | PI: Dr. Sujatha Sistla</div>
+                <ul class="card-list">
+                    <li>Led the GPSC India Project: Large-scale analysis of 1200+ pneumococcal genomes.</li>
+                    <li>Identified key mechanisms of acquired drug resistance and serotype dynamics.</li>
+                    <li>Performed pangenome-based protein interaction network analysis.</li>
+                    <li>Inferred molecular interactions of macrolides using in-silico structural analysis.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Senior Research Fellow</span>
+                    <span class="card-date">Sep 2020 – Mar 2021</span>
+                </div>
+                <div class="card-subtitle">JIPMER, Puducherry | The ICMR AMRSN WGS Project</div>
+                <ul class="card-list">
+                    <li>Conducted genomic surveillance of AMR in Staphylococci and Enterococci.</li>
+                    <li>First report of Vancomycin Variable Enterococci (VVE) in India.</li>
+                    <li>Managed research staff and operational efficiency for data collection.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="pub-item">
+                <div class="pub-title">Ph.D. in Medical Microbiology (2014-2019)</div>
+                <div class="pub-journal">JIPMER, Puducherry, India</div>
+                <p>Thesis: Epidemiological, Molecular and Bioinformatic Studies on Streptococcus pneumoniae.</p>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Bachelor of Dental Surgery (2005-2010)</div>
+                <div class="pub-journal">St. Joseph Dental College, Andhra Pradesh</div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Domain Certificate in Computational Biology (2021-23)</div>
+                <div class="pub-journal">NPTEL, India</div>
+            </div>
+        </section>
+
+        <!-- PUBLICATIONS -->
+        <section id="publications">
+            <h2 class="section-title">Selected Publications</h2>
+            <p style="margin-bottom: 20px; font-size: 0.9rem;">
+                <em>*Total Citations: 79 | h-index: 4 | i10-index: 2*</em>
+            </p>
+
+            <h3>Peer-Reviewed</h3>
+            <ul class="pub-list">
+                <li class="pub-item">
+                    <strong>Peela SCM*</strong>, Sistla S, Govindan V, et al. (2024). 
+                    Pre- and post-vaccine trends in pneumococcal serotypes and antimicrobial resistance patterns. 
+                    <span class="pub-journal">Indian Journal of Medical Research.</span>
+                </li>
+                <li class="pub-item">
+                    <strong>Peela SCM</strong>, Sistla S. (2024). 
+                    Utility of quantitative loop mediated isothermal amplification (qLAMP) assay for diagnosis of invasive pneumococcal disease. 
+                    <span class="pub-journal">Indian Journal of Medical Microbiology.</span>
+                </li>
+                <li class="pub-item">
+                    <strong>Peela S</strong>, Basu S, Sharma J, et al. (2023). 
+                    Structure elucidation and interaction dynamics of MefA-MsrD efflux-proteins in Streptococcus pneumoniae. 
+                    <span class="pub-journal">ACS Omega.</span>
+                </li>
+                <li class="pub-item">
+                    Viswanath LS... <strong>Peela SCM</strong>... Sistla S. (2022). 
+                    Detection of vancomycin variable enterococci (VVE) ... first report from the subcontinent. 
+                    <span class="pub-journal">Indian Journal of Medical Microbiology.</span>
+                </li>
+            </ul>
+
+            <h3 style="margin-top: 30px;">Preprints & Under Review</h3>
+            <ul class="pub-list">
+                <li class="pub-item">
+                    Bhattacharjee N, <strong>Peela SCM</strong> (co-first), et al. (2025). 
+                    Mechanism-aware inference of response to targeted cancer therapies. 
+                    <span class="pub-journal">bioRxiv (Under Review: Nature Communications).</span>
+                </li>
+                <li class="pub-item">
+                    Mathew B... <strong>Peela SCM</strong>... Sengupta D. (2024). 
+                    Selective promotion of oligonucleotides in the course of evolution. 
+                    <span class="pub-journal">bioRxiv (Under Review: iScience).</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- AWARDS & GRANTS -->
+        <section id="awards">
+            <h2 class="section-title">Awards & Grants</h2>
+            <ul style="list-style-type: square; margin-left: 20px; line-height: 1.8;">
+                <li><strong>International Travel Award</strong>: 12th ISPPD 2022 (Toronto, Canada).</li>
+                <li><strong>International Travel Award</strong>: 11th ISPPD 2018 (Melbourne, Australia).</li>
+                <li><strong>ASM Student Travel Award</strong>: ASM Microbe 2018.</li>
+                <li><strong>CSIR NET-JRF & SRF</strong>: All India Rank 075 (Dec 2013).</li>
+                <li><strong>Best Performer</strong>: Metagenomics for Beginners (NyBerMan Bioinformatics).</li>
+            </ul>
+        </section>
+
+        <!-- TEACHING -->
+        <section id="teaching">
+            <h2 class="section-title">Teaching & Mentorship</h2>
+            <div class="card">
+                <div class="card-title">Tutor: NGS and WGS for Beginners (2024)</div>
+                <div class="card-subtitle">NyBerMan Bioinformatics, Netherlands (Remote)</div>
+                <p>Mentored international PG/PhD students in genome sequencing, alignment, variant calling, and annotation.</p>
+            </div>
+            <div class="card">
+                <div class="card-title">Tutor: Practical Microbiology (2017-18)</div>
+                <div class="card-subtitle">JIPMER, Puducherry</div>
+                <p>Demonstrated PCR and sequence analysis to graduate students.</p>
+            </div>
+        </section>
+
+        <!-- REFERENCES -->
+        <section id="references">
+            <h2 class="section-title">References</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                <div>
+                    <strong>Dr. Sujatha Sistla</strong><br>
+                    Professor, Microbiology, JIPMER<br>
+                    <a href="mailto:sujathasistla@gmail.com" style="color:var(--accent)">sujathasistla@gmail.com</a>
+                </div>
+                <div>
+                    <strong>Dr. Debarka Sengupta</strong><br>
+                    Professor, Comp. Bio, IIIT-Delhi<br>
+                    <a href="mailto:debarka@iiitd.ac.in" style="color:var(--accent)">debarka@iiitd.ac.in</a>
+                </div>
+            </div>
+        </section>
+        
+        <footer style="margin-top: 50px; font-size: 0.8rem; color: #777; text-align: center;">
+            &copy; 2025 Dr. Sree Ramchandra Murthy Peela. Hosted on GitHub Pages.
+        </footer>
+
+    </main>
+
+</body>
+</html>
