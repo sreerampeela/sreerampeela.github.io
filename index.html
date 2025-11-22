@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Sree Ramchandra Murthy Peela - Computational Biologist</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #2A4d69; /* Deep Blue */
+            --secondary: #4b86b4; /* Lighter Blue */
+            --accent: #63cda4; /* Scientific Teal */
+            --dark: #2b2d42;
+            --light: #f8f9fa;
+            --white: #ffffff;
+            --text-grey: #555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- Layout Utilities --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 60px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 5px;
+            font-weight: 600;
+            margin-right: 10px;
+            border: 1px solid var(--primary);
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        /* --- Header / Hero --- */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #1a3c5e 100%);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .role {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 5px;
+            opacity: 0.9;
+        }
+
+        .institute {
+            font-size: 1rem;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        /* --- Summary --- */
+        .summary-box {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin-top: -40px; /* Overlap effect */
+            position: relative;
+            border-left: 5px solid var(--accent);
+        }
+
+        .summary-text strong {
+            color: var(--secondary);
+        }
+
+        /* --- Dual Skills Layout --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .skill-column h2 {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+
+        .skill-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        .skill-card h3 {
+            font-size: 1.1rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .skill-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .skill-list li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Tags for Tech Stack */
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #eef4f8;
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* --- Interests & Achievements --- */
+        .bg-white {
+            background-color: var(--white);
+        }
+
+        .interests-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .interest-item {
+            border: 1px solid var(--secondary);
+            color: var(--secondary);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .interest-item:hover {
+            background: var(--secondary);
+            color: var(--white);
+        }
+
+        .achievement-list li {
+            background: var(--light);
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .achievement-icon {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-top: 2px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--accent);
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .summary-box {
+                margin-top: 20px;
+                padding: 20px;
+            }
+        }
+
+        @media print {
+            .btn, header {
+                background: #fff !important;
+                color: #000 !important;
+            }
+            header { padding: 20px 0; border-bottom: 2px solid #000; }
+            a { text-decoration: none; color: #000; }
+            .summary-box { box-shadow: none; border: 1px solid #ccc; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <header>
+        <div class="container">
+            <!-- Optional: Add your profile photo image tag here -->
+            <!-- <img src="profile.jpg" alt="Sreeram Peela" style="width:150px; height:150px; border-radius:50%; border: 4px solid white; margin-bottom: 20px;"> -->
+            
+            <h1>Dr. Sree Ramchandra Murthy Peela</h1>
+            <div class="role">Computational Biologist | Genomics Scientist | Machine Learning in Biology</div>
+            <div class="institute">Indraprastha Institute of Information Technology Delhi (IIIT-Delhi), India</div>
+            
+            <div class="social-links">
+                <a href="mailto:srirambds.murthy@gmail.com" class="btn btn-outline"><i class="fas fa-envelope"></i> Email Me</a>
+                <a href="https://github.com/sreerampeela" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://orcid.org/0000-0003-3379-6263" target="_blank" class="btn btn-outline"><i class="fab fa-orcid"></i> ORCID</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SUMMARY SECTION -->
+    <section class="container">
+        <div class="summary-box">
+            <h3>Professional Summary</h3>
+            <p class="summary-text">
+                I am a computational biologist with <strong>5+ years of postdoctoral experience</strong> developing <em>end-to-end genomics workflows, machine learning models, and integrative multi-omics pipelines</em>. My background spans <strong>microbiology, pathogen genomics, cancer systems biology, and ML-driven predictive modelling</strong>.
+                <br><br>
+                My scientific journey, from <strong>BDS → PhD in Medical Microbiology → Postdoc in Computational Biology</strong>—shaped my ability to combine <strong>wet lab intuition</strong> with <strong>computational depth</strong>, enabling me to design solutions that are technically sound, biologically meaningful, and clinically relevant.
+            </p>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION (SPLIT) -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="skills-grid">
+                
+                <!-- Left Column: Wet Lab -->
+                <div class="skill-column">
+                    <h2><i class="fas fa-flask"></i> Experimental Biology</h2>
+                    <p style="margin-bottom:20px; font-style: italic; color: #666;">Hands-on experience enabling biologically informed computational work.</p>
+
+                    <div class="skill-card">
+                        <h3>Microbiology & Diagnostics</h3>
+                        <ul class="skill-list">
+                            <li>Bacterial culture, identification, and AST</li>
+                            <li>Phenotypic AMR detection & mechanism characterization</li>
+                            <li>Isolation and surveillance of clinical pathogens (Streptococcus, Staphylococcus, Enterococcus, Burkholderia)</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>Molecular Biology</h3>
+                        <ul class="skill-list">
+                            <li>PCR assay design & development</li>
+                            <li>qPCR and quantitative LAMP (qLAMP) assay optimization</li>
+                            <li>DNA extraction & preparation for sequencing</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>Sequencing & Benchwork</h3>
+                        <ul class="skill-list">
+                            <li>Sanger sequencing</li>
+                            <li>Illumina NGS workflow experience</li>
+                            <li>Experimental protein interaction and in-silico structure analysis</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-card" style="border-left: 4px solid var(--accent);">
+                        <h3><i class="fas fa-star" style="color:var(--accent)"></i> Lab Achievements</h3>
+                        <ul class="skill-list">
+                            <li>Developed a novel PCR assay reducing diagnostic turn-around time</li>
+                            <li>Identified VVE (vancomycin-variable enterococci) — first report from India</li>
+                            <li>Conducted large-scale pathogen surveillance projects</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Column: Computational -->
+                <div class="skill-column">
+                    <h2><i class="fas fa-laptop-code"></i> Computational Biology</h2>
+                    <p style="margin-bottom:20px; font-style: italic; color: #666;">Building scalable, reproducible, and production-ready systems.</p>
+
+                    <div class="skill-card">
+                        <h3>Stack & Workflow</h3>
+                        <div class="tech-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">R</span>
+                            <span class="tag">Bash</span>
+                            <span class="tag">Nextflow</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">Singularity</span>
+                            <span class="tag">HPC/SLURM</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>Bioinformatics Expertise</h3>
+                        <ul class="skill-list">
+                            <li>Genome assembly & annotation</li>
+                            <li>Variant discovery (SNPs, indels, SVs)</li>
+                            <li>Bacterial pangenomics & phylogenomics</li>
+                            <li>Bulk RNA-seq and scRNA-seq analysis</li>
+                            <li>Protein modelling & interaction network analysis</li>
+                            <li>Metagenomics workflows</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>Machine Learning & AI</h3>
+                        <ul class="skill-list">
+                            <li>Model development for biomarker discovery</li>
+                            <li>Mechanism-aware predictive models for cancer therapy</li>
+                            <li>Feature engineering & model interpretation</li>
+                            <li>Deep Learning & Scikit-learn ecosystem</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>Stats & Visualization</h3>
+                        <div class="tech-tags">
+                            <span class="tag">Biostatistics</span>
+                            <span class="tag">ggplot2</span>
+                            <span class="tag">matplotlib</span>
+                            <span class="tag">seaborn</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERESTS SECTION -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">Career Interests</h2>
+            <div class="interests-container">
+                <div class="interest-item">Computational Biology</div>
+                <div class="interest-item">Genomics & Precision Medicine</div>
+                <div class="interest-item">ML for Biological Data</div>
+                <div class="interest-item">Cancer Systems Biology</div>
+                <div class="interest-item">Translational & Clinical Genomics</div>
+                <div class="interest-item">Pathogen Genomics</div>
+            </div>
+            <p style="text-align: center; margin-top: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                I am motivated by roles that blend <strong>biology + computation</strong>, especially where insights can translate into actionable scientific or clinical outcomes.
+            </p>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS SECTION -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 style="margin-bottom: 30px;">Selected Achievements</h2>
+            <ul class="achievement-list">
+                <li>
+                    <i class="fas fa-dna achievement-icon"></i>
+                    <span>Led NGS analysis of <strong>1200+ pneumococcal genomes</strong>, uncovering key AMR mechanisms.</span>
+                </li>
+                <li>
+                    <i class="fas fa-server achievement-icon"></i>
+                    <span>Built <strong>scalable Nextflow pipelines</strong> for genomics, transcriptomics, and variant discovery.</span>
+                </li>
+                <li>
+                    <i class="fas fa-brain achievement-icon"></i>
+                    <span>Developed <strong>deep learning frameworks</strong> for integrative cancer omics analysis.</span>
+                </li>
+                <li>
+                    <i class="fas fa-book-open achievement-icon"></i>
+                    <span>Published <strong>10+ peer-reviewed papers</strong> (ACS Omega, IJMM, JMM) and co-authored an Elsevier book chapter.</span>
+                </li>
+                <li>
+                    <i class="fas fa-plane achievement-icon"></i>
+                    <span>Awarded <strong>four international travel grants</strong>, including ISPPD and ASM Microbe.</span>
+                </li>
+                <li>
+                    <i class="fas fa-chalkboard-teacher achievement-icon"></i>
+                    <span>Mentored graduate students and delivered international training programmes.</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CORE STRENGTHS FOOTER -->
+    <section class="section-padding bg-white">
+        <div class="container" style="text-align: center;">
+            <h2>Core Strengths</h2>
+            <div style="margin-top: 20px; font-size: 1.1rem;">
+                Cross-disciplinary background <br>
+                <strong>Microbiology ➜ Genomics ➜ Machine Learning</strong>
+            </div>
+            <br>
+            <p>Skilled in automation, workflow reproducibility, and scalable data processing.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <h3>Dr. Sree Ramchandra Murthy Peela</h3>
+            <p>Open for collaborations and opportunities.</p>
+            <br>
+            <a href="mailto:srirambds.murthy@gmail.com">srirambds.murthy@gmail.com</a>
+            <br><br>
+            <p style="font-size: 0.8rem; opacity: 0.5;">&copy; 2025 Sreeram Peela. Hosted on GitHub Pages.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
