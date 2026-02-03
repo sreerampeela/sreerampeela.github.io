@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Research Portfolio</title>
+  <style>
+    :root {
+      --accent: #2c7fb8;
+      --dark: #222;
+      --muted: #666;
+      --bg: #fafafa;
+      --card: #ffffff;
+    }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    header {
+      padding: 3rem 1.5rem 2rem;
+      text-align: center;
+      background: linear-gradient(135deg, #e6f0fa, #f7fbff);
+      border-bottom: 1px solid #e0e0e0;
+    }
+    header h1 {
+      margin: 0 0 0.5rem;
+      font-size: 2.2rem;
+    }
+    header p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    main {
+      max-width: 1100px;
+      margin: 2.5rem auto 4rem;
+      padding: 0 1.5rem;
+    }
+    .project {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+    .project h2 {
+      margin-top: 0;
+      font-size: 1.6rem;
+    }
+    .project .subtitle {
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .project a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .project a:hover {
+      text-decoration: underline;
+    }
+    .figures {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+    figure {
+      margin: 0;
+      border: 1px solid #e6e6e6;
+      border-radius: 10px;
+      padding: 0.75rem;
+      background: #fff;
+    }
+    figure img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    figcaption {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+    .skill {
+      background: #eef4fb;
+      color: #1f4e79;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--muted);
+      border-top: 1px solid #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Research Projects</h1>
+    <p>
+      A selection of genomics and computational biology projects spanning pathogen genomics, antimicrobial resistance, and
+      interpretable machine learning for drug response modelling.
+    </p>
+  </header>
+
+  <main>
+    <!-- Project 1 -->
+    <section class="project">
+      <h2>Within‑host evolution of <em>Burkholderia pseudomallei</em></h2>
+      <div class="subtitle">
+        Comparative genomics of paired clinical isolates collected six months apart from a single patient
+      </div>
+
+      <div class="figures">
+        <figure>
+          <img src="images/bp_venn.png" alt="Venn diagram of shared and unique genes" />
+          <figcaption>
+            Overlap of gene content between paired isolates, showing minimal divergence over time.
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="images/bp_networks.png" alt="Functional gene interaction networks" />
+          <figcaption>
+            Gene interaction networks highlighting isolate‑specific virulence and functional modules.
+          </figcaption>
+        </figure>
+      </div>
+
+      <p>
+        I performed a high‑resolution comparative genomic analysis of two <em>B. pseudomallei</em> isolates obtained from the same
+        patient six months apart. Despite prolonged infection, only a handful of mutations were observed, suggesting strong
+        within‑host genomic stability. Network‑based functional analyses revealed isolate‑specific enrichment of key virulence‑associated genes.
+      </p>
+
+      <ul>
+        <li>Identified extremely low within‑host mutation rates during chronic infection.</li>
+        <li>Inferred isolate‑specific virulence determinants using functional interaction networks.</li>
+        <li>Provided insights into persistence mechanisms of <em>B. pseudomallei</em> in human hosts.</li>
+      </ul>
+
+      <div class="skills">
+        <span class="skill">Comparative genomics</span>
+        <span class="skill">Bacterial WGS</span>
+        <span class="skill">GO / network analysis</span>
+        <span class="skill">Python</span>
+        <span class="skill">R</span>
+      </div>
+
+      <p>
+        <strong>Publication:</strong>
+        <a href="https://doi.org/10.1099/jmm.0.002003" target="_blank">Journal of Medical Microbiology (2023)</a>
+      </p>
+    </section>
+
+    <!-- Project 2 -->
+    <section class="project">
+      <h2>Core‑genome AMR landscape of pneumococcal GPSC lineages in India</h2>
+      <div class="subtitle">
+        Population‑scale genomic analysis of <em>Streptococcus pneumoniae</em> isolates
+      </div>
+
+      <div class="figures">
+        <figure>
+          <img src="images/gpsc_core.png" alt="Core genome and GPSC analysis" />
+          <figcaption>
+            Core‑genome analysis across Indian pneumococcal isolates stratified by GPSC lineages.
+          </figcaption>
+        </figure>
+      </div>
+
+      <p>
+        Using whole‑genome sequencing data from Indian pneumococcal isolates, I analysed core genomes in the context of Global
+        Pneumococcal Sequence Clusters (GPSCs). The study revealed that GPSC10 harbours a conserved core set of antimicrobial
+        resistance genes, pointing to widespread and stable AMR within this lineage.
+      </p>
+
+      <ul>
+        <li>Mapped resistance determinants within lineage‑specific core genomes.</li>
+        <li>Highlighted GPSC10 as a high‑risk genotype with pervasive AMR.</li>
+        <li>Provided population‑level evidence relevant to surveillance and vaccine policy.</li>
+      </ul>
+
+      <div class="skills">
+        <span class="skill">Population genomics</span>
+        <span class="skill">AMR analysis</span>
+        <span class="skill">Phylogenetics</span>
+        <span class="skill">Pan‑/core‑genome</span>
+      </div>
+
+      <p>
+        <strong>Preprint:</strong>
+        <a href="https://doi.org/10.1101/2024.01.14.575557" target="_blank">bioRxiv (2024)</a>
+      </p>
+    </section>
+
+    <!-- Project 3 -->
+    <section class="project">
+      <h2>Interpretable modelling of drug response using joint matrix factorisation</h2>
+      <div class="subtitle">
+        Linking gene expression, dependency, and drug sensitivity in cancer cell lines
+      </div>
+
+      <div class="figures">
+        <figure>
+          <img src="images/jmf_model.png" alt="Joint matrix factorisation framework" />
+          <figcaption>
+            Linear joint matrix factorisation framework for modelling dependency and IC<sub>50</sub> responses.
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="images/jmf_results.png" alt="Embedding and response analysis" />
+          <figcaption>
+            Cell‑line embeddings, benefit scores, and pathway‑level interpretations.
+          </figcaption>
+        </figure>
+      </div>
+
+      <p>
+        I developed a joint matrix factorisation framework to model gene expression, gene dependency, and drug response
+        simultaneously. By deliberately using simple linear components, the model remains interpretable while still capturing
+        biologically meaningful latent structure. This enabled identification of key genes and pathways driving resistance to
+        targeted therapies such as EGFR inhibitors.
+      </p>
+
+      <ul>
+        <li>Proposed an interpretable alternative to deep learning for drug response prediction.</li>
+        <li>Derived gene‑level benefit scores linking dependency and IC<sub>50</sub> responses.</li>
+        <li>Recovered known resistance mechanisms and suggested novel candidate drivers.</li>
+      </ul>
+
+      <div class="skills">
+        <span class="skill">Matrix factorisation</span>
+        <span class="skill">Machine learning</span>
+        <span class="skill">Cancer genomics</span>
+        <span class="skill">Model interpretability</span>
+      </div>
+
+      <p>
+        <strong>Preprint:</strong>
+        <a href="https://doi.org/10.1101/2025.09.04.674143" target="_blank">bioRxiv (2025)</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 · Research Portfolio · Hosted on GitHub Pages
+  </footer>
+</body>
+</html>
