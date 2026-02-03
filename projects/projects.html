@@ -4,112 +4,158 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | Research Portfolio</title>
+
+  <!-- Google Font to match portfolio style -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --accent: #2c7fb8;
-      --dark: #222;
-      --muted: #666;
-      --bg: #fafafa;
+      --accent-soft: #e6f0fa;
+      --dark: #0f2437;
+      --muted: #5f6f82;
+      --bg: linear-gradient(180deg, #f4f8fc 0%, #ffffff 100%);
       --card: #ffffff;
     }
+
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       background: var(--bg);
       color: var(--dark);
-      line-height: 1.6;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
     }
+
     header {
-      padding: 3rem 1.5rem 2rem;
+      padding: 4rem 1.5rem 3rem;
       text-align: center;
-      background: linear-gradient(135deg, #e6f0fa, #f7fbff);
-      border-bottom: 1px solid #e0e0e0;
+      background: linear-gradient(180deg, #244b6e, #1e3f5c);
+      color: #ffffff;
     }
+
     header h1 {
-      margin: 0 0 0.5rem;
-      font-size: 2.2rem;
+      margin: 0 0 0.75rem;
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
     }
+
     header p {
-      margin: 0;
-      color: var(--muted);
+      margin: 0 auto;
       max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
+      color: #d6e4f0;
+      font-size: 1.05rem;
+      font-weight: 400;
     }
+
     main {
       max-width: 1100px;
-      margin: 2.5rem auto 4rem;
+      margin: -3rem auto 4rem;
       padding: 0 1.5rem;
     }
+
     .project {
       background: var(--card);
-      border-radius: 12px;
-      padding: 2rem;
+      border-radius: 14px;
+      padding: 2.2rem 2.4rem;
       margin-bottom: 3rem;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      box-shadow: 0 12px 30px rgba(15, 36, 55, 0.08);
+      border-left: 5px solid var(--accent);
     }
+
     .project h2 {
       margin-top: 0;
       font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
     }
+
     .project .subtitle {
       color: var(--muted);
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
+      font-size: 0.95rem;
     }
+
+    .project p {
+      font-size: 0.95rem;
+    }
+
     .project a {
       color: var(--accent);
+      font-weight: 500;
       text-decoration: none;
     }
+
     .project a:hover {
       text-decoration: underline;
     }
+
     .figures {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.25rem;
-      margin: 1.5rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 1.8rem 0;
     }
+
     figure {
       margin: 0;
-      border: 1px solid #e6e6e6;
-      border-radius: 10px;
+      border-radius: 12px;
       padding: 0.75rem;
-      background: #fff;
+      background: #ffffff;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
+
     figure img {
       width: 100%;
-      height: auto;
-      border-radius: 6px;
+      height: 260px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: #f7f9fc;
     }
+
     figcaption {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--muted);
-      margin-top: 0.5rem;
+      margin-top: 0.6rem;
     }
+
     ul {
       padding-left: 1.2rem;
+      margin-top: 1rem;
     }
+
     ul li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.45rem;
+      font-size: 0.95rem;
     }
+
     .skills {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin-top: 0.75rem;
+      margin-top: 0.9rem;
     }
+
     .skill {
-      background: #eef4fb;
+      background: var(--accent-soft);
       color: #1f4e79;
-      padding: 0.25rem 0.6rem;
+      padding: 0.3rem 0.65rem;
       border-radius: 999px;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
+      font-weight: 500;
     }
+
     footer {
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2.5rem 1rem 2rem;
       color: var(--muted);
-      border-top: 1px solid #e0e0e0;
+      font-size: 0.85rem;
     }
   </style>
 </head>
@@ -117,152 +163,118 @@
   <header>
     <h1>Research Projects</h1>
     <p>
-      A selection of genomics and computational biology projects spanning pathogen genomics, antimicrobial resistance, and
-      interpretable machine learning for drug response modelling.
+      Translating multi-omics data into actionable science: Projects spanning bacterial pangenomics, AMR surveillance, and deep learning for drug discovery.
     </p>
   </header>
 
   <main>
     <!-- Project 1 -->
     <section class="project">
-      <h2>Within‑host evolution of <em>Burkholderia pseudomallei</em></h2>
-      <div class="subtitle">
-        Comparative genomics of paired clinical isolates collected six months apart from a single patient
-      </div>
-
-      <div class="figures">
+      <h2>Genomic Stability in Recurrent Melioidosis</em></h2>
+            <div class="figures">
         <figure>
           <img src="images/bp_venn.png" alt="Venn diagram of shared and unique genes" />
-          <figcaption>
-            Overlap of gene content between paired isolates, showing minimal divergence over time.
-          </figcaption>
+          <figcaption>Overlap of gene content between paired isolates, showing minimal divergence over time.</figcaption>
         </figure>
         <figure>
           <img src="images/bp_networks.png" alt="Functional gene interaction networks" />
-          <figcaption>
-            Gene interaction networks highlighting isolate‑specific virulence and functional modules.
-          </figcaption>
+          <figcaption>Gene interaction networks highlighting isolate-specific virulence and functional modules.</figcaption>
         </figure>
       </div>
 
       <p>
-        I performed a high‑resolution comparative genomic analysis of two <em>B. pseudomallei</em> isolates obtained from the same
-        patient six months apart. Despite prolonged infection, only a handful of mutations were observed, suggesting strong
-        within‑host genomic stability. Network‑based functional analyses revealed isolate‑specific enrichment of key virulence‑associated genes.
+        <b></b> A high-resolution study of longitudinal B. pseudomallei isolates revealing a surprisingly low mutation rate and strong within-host conservation over six months.
       </p>
 
       <ul>
-        <li>Identified extremely low within‑host mutation rates during chronic infection.</li>
-        <li>Inferred isolate‑specific virulence determinants using functional interaction networks.</li>
+        <li>Identified extremely low within-host mutation rates during chronic infection - only 2 missense variants.</li>
+        <li>Inferred isolate-specific virulence determinants using functional interaction networks.</li>
         <li>Provided insights into persistence mechanisms of <em>B. pseudomallei</em> in human hosts.</li>
       </ul>
 
       <div class="skills">
         <span class="skill">Comparative genomics</span>
         <span class="skill">Bacterial WGS</span>
-        <span class="skill">GO / network analysis</span>
+        <span class="skill">Network analysis</span>
         <span class="skill">Python</span>
         <span class="skill">R</span>
       </div>
 
-      <p>
-        <strong>Publication:</strong>
-        <a href="https://doi.org/10.1099/jmm.0.002003" target="_blank">Journal of Medical Microbiology (2023)</a>
-      </p>
+      <p><strong>Publication:</strong> <a href="https://doi.org/10.1099/jmm.0.002003" target="_blank">Journal of Medical Microbiology (2023)</a></p>
     </section>
 
     <!-- Project 2 -->
     <section class="project">
-      <h2>Core‑genome AMR landscape of pneumococcal GPSC lineages in India</h2>
-      <div class="subtitle">
-        Population‑scale genomic analysis of <em>Streptococcus pneumoniae</em> isolates
-      </div>
+      <h2>GPSC-specific core and pangenomes in India</h2>
+      
 
       <div class="figures">
         <figure>
           <img src="images/gpsc_core.png" alt="Core genome and GPSC analysis" />
-          <figcaption>
-            Core‑genome analysis across Indian pneumococcal isolates stratified by GPSC lineages.
-          </figcaption>
+          <figcaption>Core-genome analysis across Indian pneumococcal isolates stratified by GPSC lineages.</figcaption>
         </figure>
       </div>
 
       <p>
-        Using whole‑genome sequencing data from Indian pneumococcal isolates, I analysed core genomes in the context of Global
-        Pneumococcal Sequence Clusters (GPSCs). The study revealed that GPSC10 harbours a conserved core set of antimicrobial
-        resistance genes, pointing to widespread and stable AMR within this lineage.
+        Population-scale genomic analysis of 618 <em>Streptococcus pneumoniae</em> isolates</div> from India.
+Core genome inference among key Global
+        Pneumococcal Sequence Clusters (GPSCs) revealed relatively smaller GPSC10 core genomes with pervasive and stable antimicrobial resistance.
       </p>
 
       <ul>
-        <li>Mapped resistance determinants within lineage‑specific core genomes.</li>
-        <li>Highlighted GPSC10 as a high‑risk genotype with pervasive AMR.</li>
-        <li>Provided population‑level evidence relevant to surveillance and vaccine policy.</li>
+        <li>Mapped resistance determinants within lineage-specific core genomes.</li>
+        <li>Highlighted GPSC10 as a high-risk genotype with widespread AMR.</li>
+        <li>Generated evidence relevant to genomic surveillance and vaccine policy.</li>
       </ul>
 
       <div class="skills">
         <span class="skill">Population genomics</span>
         <span class="skill">AMR analysis</span>
         <span class="skill">Phylogenetics</span>
-        <span class="skill">Pan‑/core‑genome</span>
+        <span class="skill">Core-genome</span>
       </div>
 
-      <p>
-        <strong>Preprint:</strong>
-        <a href="https://doi.org/10.1101/2024.01.14.575557" target="_blank">bioRxiv (2024)</a>
-      </p>
+      <p><strong>Preprint:</strong> <a href="https://doi.org/10.1101/2024.01.14.575557" target="_blank">bioRxiv (2024)</a></p>
     </section>
 
     <!-- Project 3 -->
     <section class="project">
-      <h2>Interpretable modelling of drug response using joint matrix factorisation</h2>
-      <div class="subtitle">
-        Linking gene expression, dependency, and drug sensitivity in cancer cell lines
-      </div>
-
-      <div class="figures">
+      <h2>FORGE as a joint-matrix factorization for cancer drug susceptibility</h2>
+       <div class="figures">
         <figure>
           <img src="images/jmf_model.png" alt="Joint matrix factorisation framework" />
-          <figcaption>
-            Linear joint matrix factorisation framework for modelling dependency and IC<sub>50</sub> responses.
-          </figcaption>
+          <figcaption>Linear joint matrix factorisation framework for modelling dependency and IC<sub>50</sub> responses.</figcaption>
         </figure>
         <figure>
           <img src="images/jmf_results.png" alt="Embedding and response analysis" />
-          <figcaption>
-            Cell‑line embeddings, benefit scores, and pathway‑level interpretations.
-          </figcaption>
+          <figcaption>(a) Cell-line embeddings from the FORGE model, (b) Benefit scores stratify samples into susceptible clusters with high dependency (c) and higher benefit scores (d).</figcaption>
         </figure>
       </div>
 
       <p>
-        I developed a joint matrix factorisation framework to model gene expression, gene dependency, and drug response
-        simultaneously. By deliberately using simple linear components, the model remains interpretable while still capturing
-        biologically meaningful latent structure. This enabled identification of key genes and pathways driving resistance to
-        targeted therapies such as EGFR inhibitors.
+        A joint matrix factorisation framework (FORGE)  was developed integrating baseline gene expression, gene dependency, and drug response
+        using simple linear components. This design preserves interpretability while capturing biologically meaningful latent
+        structure. 
       </p>
 
       <ul>
         <li>Proposed an interpretable alternative to deep learning for drug response prediction.</li>
-        <li>Derived gene‑level benefit scores linking dependency and IC<sub>50</sub> responses.</li>
-        <li>Recovered known resistance mechanisms and suggested novel candidate drivers.</li>
+        <li>Derived gene-level benefit scores linking dependency and IC<sub>50</sub> responses.</li>
+        <li>Recovered known resistance mechanisms and proposed novel candidate drivers.</li>
+<li>Demonstrated model transferability by validating on xenograft and single-cell datasets.</li>
       </ul>
 
       <div class="skills">
         <span class="skill">Matrix factorisation</span>
         <span class="skill">Machine learning</span>
         <span class="skill">Cancer genomics</span>
-        <span class="skill">Model interpretability</span>
+        <span class="skill">Interpretability</span>
       </div>
 
-      <p>
-        <strong>Preprint:</strong>
-        <a href="https://doi.org/10.1101/2025.09.04.674143" target="_blank">bioRxiv (2025)</a>
-      </p>
+      <p><strong>Preprint:</strong> <a href="https://doi.org/10.1101/2025.09.04.674143" target="_blank">bioRxiv (2025)</a></p>
     </section>
   </main>
 
-  <footer>
-    © 2026 · Research Portfolio · Hosted on GitHub Pages
-  </footer>
+  <footer>© 2026 · Research Portfolio · Hosted on GitHub Pages</footer>
 </body>
 </html>
