@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -105,7 +106,7 @@
       border-radius: 12px;
       padding: 0.75rem;
       background: #ffffff;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
       display: flex;
       flex-direction: column;
       height: 100%;
@@ -159,11 +160,13 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>Research Projects</h1>
     <p>
-      Translating multi-omics data into actionable science: Projects spanning bacterial pangenomics, AMR surveillance, and deep learning for drug discovery.
+      Translating multi-omics data into actionable science: Projects spanning bacterial pangenomics, AMR surveillance,
+      and deep learning for drug discovery.
     </p>
   </header>
 
@@ -171,23 +174,27 @@
     <!-- Project 1 -->
     <section class="project">
       <h2>Genomic Stability in Recurrent Melioidosis</em></h2>
-            <div class="figures">
+      <div class="figures">
         <figure>
           <img src="images/bp_venn.png" alt="Venn diagram of shared and unique genes" />
-          <figcaption>Overlap of gene content between paired isolates, showing minimal divergence over time.</figcaption>
+          <figcaption>Overlap of gene content between paired isolates, showing minimal divergence over time.
+          </figcaption>
         </figure>
         <figure>
           <img src="images/bp_networks.png" alt="Functional gene interaction networks" />
-          <figcaption>Gene interaction networks highlighting isolate-specific virulence and functional modules.</figcaption>
+          <figcaption>Gene interaction networks highlighting isolate-specific virulence and functional modules.
+          </figcaption>
         </figure>
       </div>
 
       <p>
-        <b></b> A high-resolution study of longitudinal B. pseudomallei isolates revealing a surprisingly low mutation rate and strong within-host conservation over six months.
+        <b></b> A high-resolution study of longitudinal B. pseudomallei isolates revealing a surprisingly low mutation
+        rate and strong within-host conservation over six months.
       </p>
 
       <ul>
-        <li>Identified extremely low within-host mutation rates during chronic infection - only 2 missense variants.</li>
+        <li>Identified extremely low within-host mutation rates during chronic infection - only 2 missense variants.
+        </li>
         <li>Inferred isolate-specific virulence determinants using functional interaction networks.</li>
         <li>Provided insights into persistence mechanisms of <em>B. pseudomallei</em> in human hosts.</li>
       </ul>
@@ -200,13 +207,14 @@
         <span class="skill">R</span>
       </div>
 
-      <p><strong>Publication:</strong> <a href="https://doi.org/10.1099/jmm.0.002003" target="_blank">Journal of Medical Microbiology (2023)</a></p>
+      <p><strong>Publication:</strong> <a href="https://doi.org/10.1099/jmm.0.002003" target="_blank">Journal of Medical
+          Microbiology (2023)</a></p>
     </section>
 
     <!-- Project 2 -->
     <section class="project">
       <h2>GPSC-specific core and pangenomes in India</h2>
-      
+
 
       <div class="figures">
         <figure>
@@ -217,8 +225,9 @@
 
       <p>
         Population-scale genomic analysis of 618 <em>Streptococcus pneumoniae</em> isolates</div> from India.
-Core genome inference among key Global
-        Pneumococcal Sequence Clusters (GPSCs) revealed relatively smaller GPSC10 core genomes with pervasive and stable antimicrobial resistance.
+        Core genome inference among key Global
+        Pneumococcal Sequence Clusters (GPSCs) revealed relatively smaller GPSC10 core genomes with pervasive and stable
+        antimicrobial resistance.
       </p>
 
       <ul>
@@ -234,34 +243,39 @@ Core genome inference among key Global
         <span class="skill">Core-genome</span>
       </div>
 
-      <p><strong>Preprint:</strong> <a href="https://doi.org/10.1101/2024.01.14.575557" target="_blank">bioRxiv (2024)</a></p>
+      <p><strong>Preprint:</strong> <a href="https://doi.org/10.1101/2024.01.14.575557" target="_blank">bioRxiv
+          (2024)</a></p>
     </section>
 
     <!-- Project 3 -->
     <section class="project">
       <h2>FORGE as a joint-matrix factorization for cancer drug susceptibility</h2>
-       <div class="figures">
+      <div class="figures">
         <figure>
           <img src="images/jmf_model.png" alt="Joint matrix factorisation framework" />
-          <figcaption>Linear joint matrix factorisation framework for modelling dependency and IC<sub>50</sub> responses.</figcaption>
+          <figcaption>Linear joint matrix factorisation framework for modelling dependency and IC<sub>50</sub>
+            responses.</figcaption>
         </figure>
         <figure>
           <img src="images/jmf_results.png" alt="Embedding and response analysis" />
-          <figcaption>(a) Cell-line embeddings from the FORGE model, (b) Benefit scores stratify samples into susceptible clusters with high dependency (c) and higher benefit scores (d).</figcaption>
+          <figcaption>(a) Cell-line embeddings from the FORGE model, (b) Benefit scores stratify samples into
+            susceptible clusters with high dependency (c) and higher benefit scores (d).</figcaption>
         </figure>
       </div>
 
       <p>
-        A joint matrix factorisation framework (FORGE)  was developed integrating baseline gene expression, gene dependency, and drug response
-        using simple linear components. This design preserves interpretability while capturing biologically meaningful latent
-        structure. 
+        A joint matrix factorisation framework (FORGE) was developed integrating baseline gene expression, gene
+        dependency, and drug response
+        using simple linear components. This design preserves interpretability while capturing biologically meaningful
+        latent
+        structure.
       </p>
 
       <ul>
         <li>Proposed an interpretable alternative to deep learning for drug response prediction.</li>
         <li>Derived gene-level benefit scores linking dependency and IC<sub>50</sub> responses.</li>
         <li>Recovered known resistance mechanisms and proposed novel candidate drivers.</li>
-<li>Demonstrated model transferability by validating on xenograft and single-cell datasets.</li>
+        <li>Demonstrated model transferability by validating on xenograft and single-cell datasets.</li>
       </ul>
 
       <div class="skills">
@@ -271,10 +285,78 @@ Core genome inference among key Global
         <span class="skill">Interpretability</span>
       </div>
 
-      <p><strong>Preprint:</strong> <a href="https://doi.org/10.1101/2025.09.04.674143" target="_blank">bioRxiv (2025)</a></p>
+      <p><strong>Preprint:</strong> <a href="https://doi.org/10.1101/2025.09.04.674143" target="_blank">bioRxiv
+          (2025)</a></p>
     </section>
   </main>
+  <!-- Project 4 -->
+  <section class="project">
+    <h2>Understanding macrolide efflux mechanisms</em></h2>
+    <div class="figures">
+      <figure>
+        <img src="images/mefA_msr_modelling_workflow.png" alt="Workflow depicting protein modelling and docking" />
+        <figcaption>MefA-MsrD protein complex modelling and docking</figcaption>
+      </figure>
+      <figure>
+        <img src="images/mefA_msr_docking_res.png" alt="MefA-MsrD docking results" />
+        <figcaption>Bound drug molecules - erythromycin and azithromycin - within the protein complex</figcaption>
+      </figure>
+    </div>
+
+    <p>
+      <b></b> Protein models for MefA and MsrD constructed and drug interactions inferred.
+    </p>
+
+    <ul>
+      <li>Modelled MefA and MsrD proteins responsible for the macrolide efflux in streptococci.</li>
+      <li>Docking and MD simulations identified key residues involved in drug binding.</li>
+      <li>Provided insights into drug efflux mechanisms within the MefA-MsrD complex.</li>
+    </ul>
+
+    <div class="skills">
+      <span class="skill">Protein modelling<em>ab initio </em></span>
+      <span class="skill">Protein-ligand docking</span>
+      <span class="skill">Molecular interactions</span>
+    </div>
+
+    <p><strong>Publication:</strong> <a href="https://doi.org/10.1021/acsomega.3c05210" target="_blank">Journal of
+        Medical Microbiology (2023)</a></p>
+  </section>
+
+      <!-- Project 5 -->
+  <section class="project">
+      <h2>Surveillance of drug resistance in pneumococcus</em></h2>
+            <div class="figures">
+        <figure>
+          <img src="images/amr_spn_decade.png" alt="Susceptibility profiles of pneumococcus (N=300) over the decade" />
+          <figcaption>AMR profiles of pneumococcus 2015-18 and 2020-23</figcaption>
+        </figure>
+        <figure>
+          <img src="images/spn_serotypes_pre_post.png" alt="Serotype profiles pre and post-vaccine era" />
+          <figcaption>Pre- and post-vaccine era serotype patterns among 300 pneumococci from clinical specimens.</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        <b></b> Surveillance of drug resistance and associated mechanisms in pneumococcus.
+      </p>
+
+      <ul>
+        <li>Compared drug resistance profiles of ~300 isolates collected across pre and post-vaccine era.</li>
+        <li>Inferred emerging resistance to penicillin, high rates of macrolide and tetracycline resistance.</li>
+        <li>Serotype dynamics revealed persisting 19F and 19A serotypes in the post-vaccine era.</li>
+      </ul>
+
+      <div class="skills">
+        <span class="skill">Molecular microbiology</span>
+        <span class="skill">Data and statistical analysis</span>
+        <span class="skill">R</span>
+      </div>
+
+      <p><strong>Publication:</strong> <a href="https://doi.org/10.25259/ijmr_1811_23" target="_blank">Journal of Medical Microbiology (2023)</a></p>
+    </section>
 
   <footer>© 2026 · Research Portfolio · Hosted on GitHub Pages</footer>
 </body>
+
 </html>
