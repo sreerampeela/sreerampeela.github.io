@@ -96,20 +96,21 @@
       text-decoration: underline;
     }
 
-  /* Reset default figure margins that push content out of bounds */
-    .figure {
+  /* Reset default figure margins */
+    figure {
       margin: 0;
       display: flex;
       flex-direction: column;
+      justify-content: center; /* Centers the image vertically if it's shorter than 260px */
     }
 
- /* Force uniform dimensions and crop proportionally */
+    /* Force uniform container dimensions but CONTAIN the image to prevent cropping */
     figure img {
       width: 100%;
-      height: 260px; /* Forces all images to be exactly 260px tall */
-      object-fit: cover; /* Crops the image to fit the box without distorting/squishing */
+      height: 260px; 
+      object-fit: contain; /* This prevents the cropping */
       border-radius: 8px;
-      background: #f7f9fc;
+      background: #f7f9fc; /* Acts as a neat padding/matte for the full image */
       display: block;
     }
 
