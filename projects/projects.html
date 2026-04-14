@@ -96,33 +96,22 @@
       text-decoration: underline;
     }
 
-    .figures {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin: 1.8rem 0;
-      align-items: stretch;
+  /* Reset default figure margins that push content out of bounds */
+    .figure {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
     }
 
+ /* Force uniform dimensions and crop proportionally */
     figure img {
-  width: 100%;
-  height: auto;
-  max-height: 260px;
-  object-fit: cover;
-  border-radius: 8px;
-  background: #f7f9fc;
-  display: block;
-}
-
-    figure img {
-  width: 100%;
-  height: auto;
-  max-height: 260px;
-  object-fit: cover;
-  border-radius: 8px;
-  background: #f7f9fc;
-  display: block;
-}
+      width: 100%;
+      height: 260px; /* Forces all images to be exactly 260px tall */
+      object-fit: cover; /* Crops the image to fit the box without distorting/squishing */
+      border-radius: 8px;
+      background: #f7f9fc;
+      display: block;
+    }
 
     figcaption {
       font-size: 0.8rem;
